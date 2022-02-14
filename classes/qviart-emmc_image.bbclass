@@ -1,8 +1,8 @@
 inherit image_types
 
-IMAGE_TYPEDEP:qviartemmc2 = "ext4"
+IMAGE_TYPEDEP:qviartemmc = "ext4"
 
-do_image_qviartemmc2[depends] = " \
+do_image_qviartemmc[depends] = " \
     parted-native:do_populate_sysroot \
     dosfstools-native:do_populate_sysroot \
     mtools-native:do_populate_sysroot \
@@ -10,7 +10,7 @@ do_image_qviartemmc2[depends] = " \
     qviart-buildimage-native:do_populate_sysroot \
     "
 
-IMAGE_CMD:qviartemmc2 () {
+IMAGE_CMD:qviartemmc () {
     mkdir -p ${IMGDEPLOYDIR}/userdata
     mkdir -p ${IMGDEPLOYDIR}/userdata/linuxrootfs1
     mkdir -p ${IMGDEPLOYDIR}/userdata/linuxrootfs2

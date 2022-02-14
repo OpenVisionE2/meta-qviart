@@ -36,8 +36,8 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 
 MACHINE_FEATURES += "hisil switchoff hdmicec emmc mmc kodi19 alsa HDMI AV_JACK multitranscoding"
 
-IMAGE_CLASSES  += "qviart-emmc2_image"
-IMAGE_FSTYPES += "qviartemmc2"
+IMAGE_CLASSES  += "qviart-emmc_image"
+IMAGE_FSTYPES += "qviartemmc"
 IMAGE_ROOTFS_SIZE ?= "524288"
 
 TARGET_ARCH = "arm"
@@ -61,7 +61,7 @@ DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-wma
 
 EXTRA_OECONF:append:pn-enigma2 = "--with-lcddev=/dev/null --with-alphablendingacceleration=always --with-blitaccelerationthreshold=250  --with-fillaccelerationthreshold=190000"
 
-IMAGE_CMD:qviartemmc2:append = "\
+IMAGE_CMD:qviartemmc:append = "\
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
 	mv -f ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ext4 ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/rootfs.ext4; \
 	cd ${IMAGE_ROOTFS}; \
@@ -74,12 +74,13 @@ IMAGE_CMD:qviartemmc2:append = "\
 	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/donate.txt; \
 	cd ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions; \
 	mkupdate -s 00000003-00000001-01010101 -f ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/emmc_partitions.xml -d ${DEPLOY_DIR_IMAGE}/usb_update.bin; \ 
+	rm -f ${DEPLOY_DIR_IMAGE}/*.zip; \
 	cd ${DEPLOY_DIR_IMAGE}; \
 	cp -f ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.manifest ${IMAGE_NAME}_usb.zip.manifest; \
 	zip -j ${IMAGE_NAME}_recovery_emmc.zip ${DEPLOY_DIR_IMAGE}/usb_update.bin ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/donate.txt ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/bootargs.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/fastboot.bin ${DEPLOY_DIR_IMAGE}/${MACHINE}-partitions/apploader.bin; \
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.ext4; \
-	rm -Rf ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
+	rm -f ${DEPLOY_DIR_IMAGE}/usb_update.bin; \
 	rm -Rf ${IMAGEDIR}; \
 	rm -Rf ${IMGDEPLOYDIR}/userdata; \
 	"
