@@ -23,6 +23,15 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	qviart-buildimage \
 	e2fsprogs-resize2fs \
 	gptfdisk \
+	${@bb.utils.contains('MACHINE_FEATURES', 'emmc', 'partitions-by-name' , '', d)} \
+	kernel-module-extrawlan-rtl8192eu \
+	firmware-rtl8192eu \
+	kernel-module-mt7601u \
+	firmware-mt7601u \
+	kernel-module-extrawlan-rtl8822cu \
+	kernel-module-extrawlan-rtl8821cu \
+	firmware-8821cu \
+	kernel-module-extrabt-rtkbtusb \
 	"
 
 MACHINE_FEATURES += "hisil switchoff hdmicec emmc mmc kodi19 alsa HDMI AV_JACK multitranscoding"
