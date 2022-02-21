@@ -7,6 +7,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PR = "${SRCDATE}"
 
+inherit preserve_binary
+
 PROVIDES = "virtual/libgles1 virtual/libgles2 virtual/egl"
 RPROVIDES:${PN} = "virtual/libgles1 virtual/libgles2 virtual/egl libEGL.so libGLESv2.so libmali.so"
 

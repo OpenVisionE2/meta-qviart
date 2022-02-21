@@ -13,6 +13,8 @@ SRCDATE = "20220212"
 
 PV = "${SRCDATE}"
 
+inherit preserve_binary
+
 SRC_URI = "http://source.mynonpublic.com/qviart/${MACHINE}-libreader-${SRCDATE}.tar.gz"
 
 SRC_URI[md5sum] = "f1b88dff76e565546ddb3b75cd10c62e"

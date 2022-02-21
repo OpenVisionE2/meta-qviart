@@ -11,6 +11,8 @@ SRCDATE = "20211220"
 
 PV = "${SRCDATE}"
 
+inherit preserve_binary
+
 RPROVIDES:${PN}  = "aio-grab"
 RREPLACES:${PN}  = "aio-grab"
 RCONFLICTS:${PN} = "aio-grab"

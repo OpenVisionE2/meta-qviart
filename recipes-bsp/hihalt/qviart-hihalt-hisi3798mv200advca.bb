@@ -13,9 +13,10 @@ SRCDATE = "20220211"
 
 PV = "${SRCDATE}"
 
+inherit preserve_binary update-rc.d
+
 INITSCRIPT_NAME = "suspend"
 INITSCRIPT_PARAMS = "start 89 0 ."
-inherit update-rc.d
 
 SRC_URI  = "http://source.mynonpublic.com/qviart/${SOC_FAMILY}-hihalt-${SRCDATE}.tar.gz \
 	file://suspend.sh \

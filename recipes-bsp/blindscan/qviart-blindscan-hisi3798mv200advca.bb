@@ -7,6 +7,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 COMPATIBLE_MACHINE = "^(og2ott4k)$"
 
+inherit preserve_binary
+
 PROVIDES += "virtual/blindscan-dvbs"
 RPROVIDES:${PN} += "virtual/blindscan-dvbs"
 
@@ -32,7 +34,5 @@ do_package_qa() {
 FILES:${PN}  = "${bindir}"
 
 do_prepare_recipe_sysroot[noexec] = "1"
-INHIBIT_PACKAGE_STRIP = "1"
-INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 do_compile[noexec] = "1"
 deltask do_populate_sysroot

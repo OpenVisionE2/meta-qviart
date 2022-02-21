@@ -17,7 +17,7 @@ SRC_URI[sha256sum] = "9d8f71a4d256b30c092c58b961732926b68d00b1a8940444b139afd0c7
 
 S = "${WORKDIR}"
 
-INHIBIT_PACKAGE_STRIP = "1"
+inherit preserve_binary
 
 do_compile() {
 }

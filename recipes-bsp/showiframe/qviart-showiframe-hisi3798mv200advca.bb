@@ -11,6 +11,8 @@ SRCDATE = "20211220"
 
 PV = "${SRCDATE}"
 
+inherit preserve_binary
+
 RPROVIDES:${PN}  = "showiframe"
 RREPLACES:${PN}  = "showiframe"
 RCONFLICTS:${PN} = "showiframe"

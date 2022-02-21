@@ -6,7 +6,7 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-inherit deploy update-rc.d
+inherit deploy update-rc.d preserve_binary
 
 SRCDATE = "20220214"
 

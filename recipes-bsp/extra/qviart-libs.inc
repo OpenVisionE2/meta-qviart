@@ -9,10 +9,8 @@ RDEPENDS:${PN} = "curl"
 
 PV = "${SRCDATE}"
 
-inherit lib_package
+inherit lib_package preserve_binary
 
-INHIBIT_PACKAGE_STRIP = "1"
-INHIBIT_PACKAGE_DEBUG_SPLIT = "1"
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
 
