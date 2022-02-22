@@ -34,7 +34,7 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	kernel-module-extrabt-rtkbtusb \
 	"
 
-MACHINE_FEATURES += "hisil switchoff hdmicec emmc mmc kodi19 alsa HDMI AV_JACK multitranscoding"
+MACHINE_FEATURES += "hisil switchoff hdmicec emmc mmc kodi19 alsa HDMI AV_JACK multitranscoding definesat"
 
 IMAGE_CLASSES  += "qviart-emmc_image"
 IMAGE_FSTYPES += "qviartemmc"
