@@ -26,7 +26,7 @@ RPROVIDES:${KERNEL_PACKAGE_NAME}-image = "${KERNEL_PACKAGE_NAME}-image-${KERNEL_
 
 SRC_URI = "http://source.mynonpublic.com/qviart/qviart-linux-${PV}-${SRCDATE}.tar.gz \
 	file://defconfig \
-	file://${OPENVISION_BASE}/meta-openvision/recipes-linux/kernel-patches/kernel-add-support-for-gcc${VISIONGCCVERSION}.patch \
+	${GCCKERPATCH} \
 	file://initramfs-subdirboot.cpio.gz;unpack=0 \
 	file://findkerneldevice.sh \
 	"
