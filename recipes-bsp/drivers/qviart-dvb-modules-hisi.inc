@@ -7,6 +7,7 @@ require conf/license/license-close.inc
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 PV = "${KV}+${SRCDATE}"
+DRIVERDATE = "${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/qviart/${MACHINE}-hiko-${SRCDATE}.zip"
 
