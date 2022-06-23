@@ -13,7 +13,7 @@ SRC_URI = "http://source.mynonpublic.com/qviart/${MACHINE}-hiko-${SRCDATE}.zip"
 
 S = "${WORKDIR}/hiko"
 
-inherit preserve_binary
+inherit preserve_binary driverdeploy
 
 FILES:${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${nonarch_base_libdir}/modules/${KV}/extra"
 
