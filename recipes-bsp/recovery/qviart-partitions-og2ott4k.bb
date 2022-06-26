@@ -30,7 +30,7 @@ do_install() {
 	install -m 0644 ${S}/bootargs.bin ${D}${datadir}
 	install -m 0644 ${S}/sbl.bin.sig ${D}${datadir}
 	install -m 0644 ${S}/apploader.bin ${D}${datadir}
-	install -m 0755 -d ${D}${INIT_D_DIR}
+	install -d ${D}${INIT_D_DIR}
 	install -m 0755 ${WORKDIR}/flash-apploader ${D}${INIT_D_DIR}
 }
 
